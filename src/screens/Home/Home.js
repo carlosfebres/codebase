@@ -5,7 +5,7 @@ import User from '../User/User';
 import UserButton from "./UserButton";
 
 const Home = ({navigation}) => {
-  const githubUserButtons = githubUsers.map((username, index) => (
+  const githubUserButtons = githubUsers.users.map((username, index) => (
     <UserButton username={username} onPress={() => navigation.push('User', {username})}/>
   ));
   return (
