@@ -1,7 +1,10 @@
 import React, {useState} from 'react';
-import {Button, StyleSheet, Text, View} from 'react-native';
+import {View} from 'react-native';
 import {getGithubUser} from "../../utils/github.service";
-import {Brief, Item, List, Spin} from "antd-mobile";
+import {List} from "antd-mobile";
+
+const Item = List.Item;
+const Brief = Item.Brief;
 
 const User = ({route}) => {
   const {username} = route.params;
@@ -16,7 +19,7 @@ const User = ({route}) => {
   if (loading) {
     return (
       <View>
-        <Spin />
+        <h1>Loading User...</h1>
       </View>
     );
   }
@@ -27,7 +30,8 @@ const User = ({route}) => {
         <Item
           arrow="horizontal"
           thumb={user.avatar_url}
-          onClick={() => {}}
+          onClick={() => {
+          }}
         >
           {user.name}
           <Brief>{user.location}</Brief>
